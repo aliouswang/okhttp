@@ -168,6 +168,7 @@ public final class StreamAllocation {
       RealConnection pooledConnection = Internal.instance.get(connectionPool, address, this);
       if (pooledConnection != null) {
         this.connection = pooledConnection;
+        System.out.println("connection cache hit!!!");
         return pooledConnection;
       }
 

@@ -24,11 +24,17 @@ public class OkHttpContributors {
 
   public static void main(String... args) throws Exception {
     OkHttpClient client = new OkHttpClient();
+    for (int i = 0; i < 1; i++) {
+      doGetRequest(client);
+    }
+  }
+
+  private static void doGetRequest(OkHttpClient client) throws Exception {
 
     // Create request for remote resource.
     Request request = new Request.Builder()
-        .url(ENDPOINT)
-        .build();
+            .url(ENDPOINT)
+            .build();
 
     // Execute the request and retrieve the response.
     Response response = client.newCall(request).execute();
